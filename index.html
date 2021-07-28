@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>  
+      //Validation adresse IP
+    function ip_validator(adresse){
+        var forme = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+      if(adresse.value.match(forme)){
+        document.formulaire.adresseIP.focus();
+        alert("yes");
+        return true;
+      }else{
+        alert("No!");
+        document.formulaire.adresseIP.focus();
+        return false;
+        }}    
+    </script>
+</head>
+
+<body>
+  <!-- Formulaire validation adresse IP -->
+
+  <div class="mail">
+    <h1>Adresse à vérifier</h1>
+    <form name="formulaire"> 
+    <input type='text' name='adresseIP' placeholder="Rentrez votre adresse ici"/>
+    <input type="submit" name="submit" value="Testez" onclick="ip_validator(document.formulaire.adresseIP)"/>
+    </form>
+    </div>
+  
+</body>
+</html>
